@@ -40,22 +40,16 @@ npm install
 #### **Chạy server**
 ```sh
 cd server
+node seeder.js 
 npm start
 ```
 #### **Chạy front-end**
 ```sh
 cd client
 npm start
-```
 
-## 📜 Đóng góp
-1. Fork repository này.
-2. Tạo nhánh mới (`git checkout -b feature-moi`).
-3. Commit thay đổi (`git commit -m "Thêm tính năng XYZ"`).
-4. Push lên GitHub (`git push origin feature-moi`).
-5. Tạo Pull Request.
-
-## 📧 Liên hệ
-- **Email**: nhdo3101@gmail.com
-- **GitHub**: [NguyenHuuDo3101](https://github.com/NguyenHuuDo3101)
-- **Website**: [Đang phát triển]
+```## Chạy data
+cmd (Admin) : net start MongoDB
+open : mongodb
+connet connections : mongodb://127.0.0.1:27017/shop
+server : node seeder.js

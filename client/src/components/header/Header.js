@@ -20,10 +20,9 @@ function Header(props) {
   const [showAccount2, setShowAccount2] = useState(false);
 
   const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo, error } = userSignin;
+  const { userInfo } = userSignin;
   const [search, setSearch] = useState("");
   const cartItems = useSelector((state) => state.cart.cartItems);
-  // Tính số lượng sản phẩm trong giỏ hàng (không phải qty mà là số sản phẩm)
   const amount = cartItems.length;
 
   const [menu, setMenu] = useState(true);
@@ -53,11 +52,10 @@ function Header(props) {
               type="text"
               name="search"
               placeholder="Tìm kiếm ..."
-              defaultValue={setSearch}
+              value={search} // Đã sửa: dùng value thay vì defaultValue={setSearch}
               onChange={(e) => setSearch(e.target.value)}
             ></input>
             <SearchOutlined onClick={(e) => SearchProduct(e)}></SearchOutlined>
-            {/* <button type="submit" onClick={(e) => SearchProduct(e)}>Search</button> */}
           </form>
         </div>
         <ul className="menu-list" id={menu ? "hidden" : ""}>
@@ -69,7 +67,8 @@ function Header(props) {
           </li>
           {userInfo ? (
             <li onClick={() => setShowAccount2(!showAccount2)}>
-              <Link>
+              {/* SỬA LỖI 1: Thêm to="#" */}
+              <Link to="#">
                 {userInfo.name}
                 <DownOutlined style={{ fontSize: "14px" }} />
               </Link>
@@ -78,7 +77,8 @@ function Header(props) {
                   {userInfo.isAdmin ? <Link to="/admin">Admin</Link> : ""}
                   <Link to="/myOrder">Đơn hàng</Link>
                   <Link to="/profile">Trang cá nhân</Link>
-                  <Link onClick={() => handleSignout()}>Đăng xuất</Link>
+                  {/* SỬA LỖI 2: Thêm to="#" */}
+                  <Link to="#" onClick={() => handleSignout()}>Đăng xuất</Link>
                 </div>
               ) : (
                 ""
@@ -86,15 +86,16 @@ function Header(props) {
             </li>
           ) : (
             <li onClick={() => setShowAccount(!showAccount)}>
-              <Link>
+              {/* SỬA LỖI 3: Thêm to="#" */}
+              <Link to="#">
                 Tài khoản
                 <DownOutlined style={{ fontSize: "14px" }} />
               </Link>
 
               {showAccount ? (
                 <div className="menu-drop">
-                  <Link to="register">Đăng kí</Link>
-                  <Link to="login">Đăng nhập</Link>
+                  <Link to="/register">Đăng kí</Link> {/* Nên thêm dấu / trước register */}
+                  <Link to="/login">Đăng nhập</Link>  {/* Nên thêm dấu / trước login */}
                 </div>
               ) : (
                 ""

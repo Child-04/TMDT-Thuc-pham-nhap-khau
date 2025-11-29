@@ -120,16 +120,15 @@ export const UpdateProduct = expressAsyncHandler(async (req, res) => {
 });
 
 export const DeleteProduct = expressAsyncHandler(async (req, res) => {
-  const deleteProduct = await ProductModel.findById(req.params.id);
+    const product = await ProductModel.findById(req.params.id);
 
-  // await cloudinary.uploader.destroy(deleteProduct.cloudinary_id);
-
-  if (deleteProduct) {
-    await deleteProduct.remove();
-    res.send({ message: "product deleted" });
-  } else {
-    res.send("error in deletetion");
-  }
+    if (product) {
+        // Dùng deleteOne() thay vì remove()
+        await ProductModel.deleteOne({ _id: req.params.id }); 
+        res.send({ message: "Product deleted" });
+    } else {
+        res.status(404).send({ message: "Product not found" });
+    }
 });
 
 export const SearchProduct = expressAsyncHandler(async (req, res) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Carousel.css";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import Slider from "react-slick";
@@ -28,15 +28,18 @@ function SamplePrevArrow(props) {
 }
 
 function Carousel(props) {
-  let { slider, slider1, slider2 } = props;
+  // 1. Dùng useRef thay vì lấy từ props để tránh lỗi và đúng chuẩn React Hook
   const [nav, setNav] = useState({ nav1: null, nav2: null });
+  const slider1Ref = useRef(null);
+  const slider2Ref = useRef(null);
 
+  // 2. useEffect để đồng bộ 2 slider sau khi render xong
   useEffect(() => {
     setNav({
-      nav1: slider1,
-      nav2: slider2
+      nav1: slider1Ref.current,
+      nav2: slider2Ref.current
     });
-  }, [slider1, slider2]);
+  }, []);
 
   const settings = {
     dots: false,
@@ -50,11 +53,13 @@ function Carousel(props) {
     prevArrow: <SamplePrevArrow />,
   };
 
+  // 3. Hàm điều khiển Next/Prev sử dụng Ref
   const next = () => {
-    slider1.slickNext();
+    slider1Ref.current.slickNext();
   };
+  
   const previous = () => {
-    slider2.slickPrev();
+    slider1Ref.current.slickPrev(); // Sửa thành slider1 để điều khiển ảnh chính
   };
 
   return (
@@ -62,11 +67,13 @@ function Carousel(props) {
       <div className="carousel">
         <div className="carousel-left">
           <div className="carousel-left-slide">
-            <Slider asNavFor={nav.nav2}
-              ref={slider => (slider1 = slider)}
-              {...settings} >
+            <Slider 
+              asNavFor={nav.nav2}
+              ref={slider1Ref} // Gán ref vào biến slider1Ref
+              {...settings} 
+            >
               <div key={1}>
-                <img src="https://cdn.chonongsanonline.com/uploads/all/2NFPksxLnwIE8XU6Y8ZwhQtRw9UMszOSkYe32Mxa.png" alt="Hình 1"></img>
+                <img src="https://kamereo.vn/blog/wp-content/uploads/2025/04/contract-farm-tieng-viet.jpg" alt="Hình 1"></img>
               </div>
               <div key={2}>
                 <img src="https://theme.hstatic.net/1000324420/1000664192/14/banner1.jpg?v=52" alt="Hình 2"></img>
@@ -75,24 +82,27 @@ function Carousel(props) {
                 <img src="https://theme.hstatic.net/200000281397/1000675334/14/slider_1.jpg?v=77" alt="Hình 3"></img>
               </div>
               <div key={4}>
-                <img src="https://cdn.chonongsanonline.com/uploads/all/v8CeniFCjguPwqYxxXJKsp8lVmINLEldpy9h78ft.jpg" alt="Hình 4"></img>
+                <img src="https://file.hstatic.net/200000962211/collection/artboard_1_5d168cc416ad406db37204c94c8c4daa.png" alt="Hình 4"></img>
               </div>
               <div key={5}>
                 <img src="https://file.hstatic.net/1000301274/file/z3400696818926_212c03e20ce3f328cbda1429f574658e_e8a1fa849f1a49adb5c7b05e3f05ff29_grande.jpg" alt="Hình 5"></img>
               </div>
             </Slider>
+            
             <div className="carousel-left-move">
-              <div className="prev" onClick={() => previous()}>
+              <div className="prev" onClick={previous}>
                 <LeftOutlined />
               </div>
-              <div className="next" onClick={() => next()}>
+              <div className="next" onClick={next}>
                 <RightOutlined />
               </div>
             </div>
           </div>
+          
           <div className="carousel-left-bottom">
-            <Slider asNavFor={nav.nav1}
-              ref={slider => (slider2 = slider)}
+            <Slider 
+              asNavFor={nav.nav1}
+              ref={slider2Ref} // Gán ref vào biến slider2Ref
               slidesToShow={4}
               swipeToSlide={true}
               focusOnSelect={true}

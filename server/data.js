@@ -1,14 +1,36 @@
+import bcrypt from 'bcryptjs';
+
 export const data = {
+    users: [
+        {
+            name: 'Admin User',
+            email: 'admin@example.com',
+            password: bcrypt.hashSync('123456', 10), // Mật khẩu là 123456
+            isAdmin: true,
+            phone: '0909000001',
+            address: 'TP.HCM'
+        },
+        {
+            name: 'Customer User',
+            email: 'user@example.com',
+            password: bcrypt.hashSync('123456', 10),
+            isAdmin: false,
+            phone: '0909000002',
+            address: 'Hà Nội'
+        }
+    ],
+
     "products": [
         {
             "id": 1,
             "name": "Táo nhập khẩu Fuji Nhật Bản (kg)",
             "price": 150000,
             "salePrice": 130000,
-            "type": "fruit",
-            "image": "https://example.com/images/apple-fuji.jpg",
+            "type": "Rau sạch",
+            "image": "https://product.hstatic.net/200000887355/product/tao-fuji-nhat-ban__1__507afaaf7bbd41348bfd1efbc29dbf2d_master.jpg",
             "rating": 5,
             "numReviews": 10,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng A",
@@ -22,10 +44,11 @@ export const data = {
             "name": "Nho nhập khẩu Mỹ (kg)",
             "price": 220000,
             "salePrice": 200000,
-            "type": "fruit",
-            "image": "https://example.com/images/grape.jpg",
+            "type": "rau củ",
+            "image": "https://minhcaumart.vn//media/com_eshop/products/resized/9900000480509-500x500.webp",
             "rating": 4.5,
             "numReviews": 20,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng B",
@@ -39,10 +62,11 @@ export const data = {
             "name": "Thịt bò Úc (kg)",
             "price": 500000,
             "salePrice": 470000,
-            "type": "meat",
-            "image": "https://example.com/images/australian-beef.jpg",
+            "type": "thịt sạch",
+            "image": "https://file.hstatic.net/200000356095/file/3_0f5af5d26f7647509c7f71dc30a4238b.jpg",
             "rating": 5,
             "numReviews": 15,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng C",
@@ -56,10 +80,11 @@ export const data = {
             "name": "Sữa hạnh nhân nhập khẩu Mỹ (1 lít)",
             "price": 75000,
             "salePrice": 70000,
-            "type": "dairy",
-            "image": "https://example.com/images/almond-milk.jpg",
+            "type": "khác",
+            "image": "https://product.hstatic.net/200000316271/product/hnnhmyt200_3f118015115e4f6b9cecc7c30e851c22_master.jpg",
             "rating": 4,
             "numReviews": 12,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng D",
@@ -73,10 +98,11 @@ export const data = {
             "name": "Cá hồi Na Uy (kg)",
             "price": 600000,
             "salePrice": 550000,
-            "type": "seafood",
-            "image": "https://example.com/images/norwegian-salmon.jpg",
+            "type": "khác",
+            "image": "https://cdn.5sfood.vn/media/san-pham-5s/ca-hoi-nauy-fillet/ca-hoi-nauy-phi-le-3-min.jpg",
             "rating": 5,
             "numReviews": 8,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng E",
@@ -90,10 +116,11 @@ export const data = {
             "name": "Bơ nhập khẩu Mexico (kg)",
             "price": 180000,
             "salePrice": 170000,
-            "type": "fruit",
-            "image": "https://example.com/images/avocado.jpg",
+            "type": "khác",
+            "image": "https://product.hstatic.net/200000325223/product/z2448801510183_2263357c23ba80c433204bcdc0cb2d19_056f2c250f0d4ab699b11e67dc809b48_master.jpg",
             "rating": 4.8,
             "numReviews": 5,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng F",
@@ -107,10 +134,11 @@ export const data = {
             "name": "Mì Ý Barilla (500g)",
             "price": 50000,
             "salePrice": 45000,
-            "type": "pasta",
-            "image": "https://example.com/images/barilla-pasta.jpg",
+            "type": "khác",
+            "image": "https://product.hstatic.net/1000282430/product/barilla-spaghettini-no.3-pasta_-500g_439d30a7573540e281a2b0afcc08a1a1_d583f94f68e942028896ed1ba6c7b1a1_master.jpg",
             "rating": 4.7,
             "numReviews": 30,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng G",
@@ -124,10 +152,11 @@ export const data = {
             "name": "Dầu ô liu Extra Virgin (500ml)",
             "price": 200000,
             "salePrice": 180000,
-            "type": "oil",
-            "image": "https://example.com/images/olive-oil.jpg",
+            "type": "khác",
+            "image": "https://havamall.com/wp-content/uploads/2019/01/f50ef97b212bfd75a43a.png",
             "rating": 4.9,
             "numReviews": 22,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng H",
@@ -141,10 +170,11 @@ export const data = {
             "name": "Trà xanh Nhật Bản (100g)",
             "price": 150000,
             "salePrice": 140000,
-            "type": "tea",
-            "image": "https://example.com/images/japanese-green-tea.jpg",
+            "type": "khác",
+            "image": "https://hachihachi.com.vn/Uploads/_6/productimage/4980523093535.jpg",
             "rating": 4.5,
             "numReviews": 18,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng I",
@@ -158,10 +188,11 @@ export const data = {
             "name": "Phô mai Cheddar Anh (500g)",
             "price": 250000,
             "salePrice": 230000,
-            "type": "dairy",
-            "image": "https://example.com/images/cheddar-cheese.jpg",
+            "type": "khác",
+            "image": "https://salt.tikicdn.com/cache/525x525/ts/product/7b/42/15/2f83f4517ea96dea7013cd676a6d29c9.jpg",
             "rating": 4.8,
             "numReviews": 10,
+            "amount": 100,
             "reviews": [
                 {
                     "name": "Khách hàng J",
