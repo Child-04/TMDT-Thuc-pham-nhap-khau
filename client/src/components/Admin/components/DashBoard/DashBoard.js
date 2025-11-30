@@ -135,6 +135,24 @@ export default function DashBoard() {
 
   return (
     <section id="dashboard" style={styles.dashboard}>
+      {/* SEO Content Block */}
+      <div style={{ display: 'none' }} className="seo-content-dashboard">
+        <h1>Dashboard quản trị thực phẩm nhập khẩu</h1>
+        <p>Trang tổng quan quản trị cho hệ thống thương mại điện tử thực phẩm nhập khẩu cao cấp. Theo dõi tất cả chỉ số kinh doanh quan trọng, phân tích xu hướng bán hàng và quản lý hiệu quả hoạt động kinh doanh trong một giao diện trực quan.</p>
+        
+        <h2>Thống kê tổng quan kinh doanh</h2>
+        <p>Dashboard cung cấp cái nhìn tổng quan về tình hình kinh doanh với các chỉ số quan trọng như tổng số sản phẩm, đơn hàng, khách hàng và doanh thu. Dữ liệu được cập nhật realtime giúp người quản trị nắm bắt tình hình kinh doanh một cách kịp thời và chính xác nhất.</p>
+        
+        <h3>Phân tích doanh thu chi tiết</h3>
+        <p>Hệ thống biểu đồ doanh thu theo thời gian giúp theo dõi xu hướng tăng trưởng, so sánh hiệu quả kinh doanh giữa các khoảng thời gian khác nhau. Tính năng lọc doanh thu theo ngày, tuần, tháng và năm giúp phân tích sâu hơn về hiệu quả kinh doanh.</p>
+        
+        <h3>Quản lý đơn hàng hiệu quả</h3>
+        <p>Theo dõi số lượng đơn hàng mới, đang xử lý, đã giao thành công và các đơn hàng có vấn đề. Thống kê này giúp đánh giá hiệu quả của quy trình xử lý đơn hàng và chất lượng dịch vụ khách hàng.</p>
+        
+        <h3>Phân tích khách hàng và sản phẩm</h3>
+        <p>Thống kê số lượng khách hàng mới, khách hàng thường xuyên và phân tích hành vi mua sắm. Theo dõi hiệu quả của từng sản phẩm, sản phẩm bán chạy nhất và xu hướng tiêu thụ để đưa ra quyết định kinh doanh phù hợp.</p>
+      </div>
+      
       <div style={styles.topSection}>
         <div style={styles.searchForm}>
           <form>

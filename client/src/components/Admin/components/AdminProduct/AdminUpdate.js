@@ -81,7 +81,7 @@ function AdminUpdate(props) {
       }
       onClick={() => HandleFilterProductByType(item.name)}
     >
-      <img src={item.img}></img>
+      <img src={item.img} alt={`Cập nhật sản phẩm ${item.name || 'Hình ảnh sản phẩm'}`}></img>
     </div>
   );
 

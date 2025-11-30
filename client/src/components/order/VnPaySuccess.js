@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { BASE_URL } from '../../constants/UserConstant';
 import { useLocation, Link } from "react-router-dom";
 import { CheckOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
@@ -15,6 +19,7 @@ export default function VnPaySuccess() {
   const message = query.get("message"); // Lấy thông báo lỗi nếu có
 
   useEffect(() => {
+
     // 2. Kiểm tra resultCode = 0 (Nghĩa là Thành công)
     if (resultCode == 0) {
       // Xóa giỏ hàng trong Redux

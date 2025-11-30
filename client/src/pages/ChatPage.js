@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { BASE_URL } from '../constants/UserConstant';
 
 function ChatPage(props) {
     const [fileInputState, setFileInputState] = useState('');
@@ -38,7 +39,7 @@ function ChatPage(props) {
 
     const uploadImage = async (base64EncodedImage) => {
         try {
-            await fetch('http://localhost:4000/api/upload', {
+            await fetch(`${BASE_URL}/api/upload`, {
                 method: 'POST',
                 body: JSON.stringify({ data: base64EncodedImage }),
                 headers: { 'Content-Type': 'application/json' },
