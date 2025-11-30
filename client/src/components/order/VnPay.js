@@ -94,7 +94,7 @@ export default function VnPay(props) {
         <div className="border p-4 cursor-pointer hover:bg-gray-100 text-center"
              onClick={handleMoMoPayment}>
             <img
-                src="https://developers.momo.vn/v3/resources/logo-momo.png"
+                src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png"
                 alt="Thanh toán qua MoMo"
                 className="w-40 mx-auto"
                 style={{ maxWidth: "150px" }} 
