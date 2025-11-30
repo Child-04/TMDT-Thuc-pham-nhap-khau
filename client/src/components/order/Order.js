@@ -240,7 +240,12 @@ function Order(props) {
               </div>
             </div>
           </div>
-          <Payment></Payment>
+          <Payment 
+    chooseProvince={chooseProvince}
+    chooseDistrict={chooseDistrict}
+    chooseWard={chooseWard}
+    getValues={getValues}
+></Payment>
         </form>
       </div>
     </section>
