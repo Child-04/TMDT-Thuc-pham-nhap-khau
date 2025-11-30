@@ -38,7 +38,7 @@ app.use("/products", ProductRouter);
 app.use("/user", UserRouter);
 app.use("/order", OrderRouter);
 app.use("/chat", ChatRouter);
-app.use("/payment", PaymentRouter);
+app.use("/api/payment", PaymentRouter);
 app.use("/selectList", SelectListrouter);
 app.use("/typeList", ListTypeProductRouter);
 app.use("/counts", CountRouter);

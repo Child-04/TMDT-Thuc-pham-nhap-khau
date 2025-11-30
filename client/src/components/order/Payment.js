@@ -6,7 +6,7 @@ import { createOrder, payOrder } from "../../actions/OrderAction";
 import { useHistory } from "react-router-dom";
 import VnPay from "./VnPay";
 
-export default function Payment() {
+export default function Payment(props) {
   const history = useHistory();
   const dispatch = useDispatch();
   const [sdkReady, setSdkReady] = useState(false);
@@ -14,6 +14,10 @@ export default function Payment() {
     payLater: false,
     payOnline: false,
   });
+
+const { chooseProvince, chooseDistrict, chooseWard, getValues } = props;
+
+
 
   const { order } = useSelector((state) => state.orderInfo);
 
@@ -61,9 +65,8 @@ export default function Payment() {
         setSdkReady(true);
       };
       document.body.appendChild(script);
-
-      addPayPalScript();
-    };
+  };
+    addPayPalScript();
   }, []);
   return (
     <div className="choose-pay">
@@ -94,7 +97,12 @@ export default function Payment() {
       {choosePay.payOnline ? (
         <button type="submit" className="paypal">
           
-          <VnPay></VnPay>
+          <VnPay 
+            chooseProvince={chooseProvince}
+            chooseDistrict={chooseDistrict}
+            chooseWard={chooseWard}
+            getValues={getValues}
+          ></VnPay>
           <PayPalButton
             className="paypal-btn"
             style={{ color: "white", marginTop: '1rem' }}

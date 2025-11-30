@@ -15,6 +15,7 @@ import MyOrderPage from "./pages/MyOrderPage";
 import PaymentPage from "./pages/PaymentPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import Profile from "./components/Profile/Profile";
+import VnPaySuccess from './components/order/VnPaySuccess';
 
 function App() {
   return (
@@ -56,6 +57,8 @@ function App() {
         <Route path="/MyOrder">
           <MyOrderPage></MyOrderPage>
         </Route>
+
+        <Route path="/payment-return" component={VnPaySuccess} />
 
         <Route path="/search">
           <SearchPage></SearchPage>

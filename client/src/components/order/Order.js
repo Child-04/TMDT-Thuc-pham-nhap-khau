@@ -11,10 +11,11 @@ import {
 import { useHistory } from "react-router-dom";
 import Payment from "./Payment";
 
+
 function Order(props) {
 
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, watch, getValues, formState: { errors } } = useForm();
 
   const allProvince = useSelector((state) => state.address.province);
   const allDistrict = useSelector((state) => state.address.district);
@@ -240,7 +241,12 @@ function Order(props) {
               </div>
             </div>
           </div>
-          <Payment></Payment>
+          <Payment 
+    chooseProvince={chooseProvince}
+    chooseDistrict={chooseDistrict}
+    chooseWard={chooseWard}
+    getValues={getValues}
+></Payment>
         </form>
       </div>
     </section>
