@@ -30,7 +30,19 @@ const server = createServer(app);
 ConnectSocket(server);
 connectDB();
 
-app.use(cors());
+// CORS configuration for production
+const corsOptions = {
+  origin: [
+    "http://localhost:3000", 
+    "https://tmdt-thuc-pham-nhap-khau-client.onrender.com",
+    "https://tmdt-thuc-pham-nhap-khau.onrender.com"
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
@@ -42,6 +54,22 @@ app.use("/payment", PaymentRouter);
 app.use("/selectList", SelectListrouter);
 app.use("/typeList", ListTypeProductRouter);
 app.use("/counts", CountRouter);
+
+// Health check and test endpoints
+app.get("/", (req, res) => {
+  res.json({ 
+    message: "TPNK Server is running!", 
+    timestamp: new Date().toISOString(),
+    status: "OK"
+  });
+});
+
+app.get("/api/test", (req, res) => {
+  res.json({ 
+    message: "API is working!",
+    timestamp: new Date().toISOString()
+  });
+});
 
 app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || "sb");
