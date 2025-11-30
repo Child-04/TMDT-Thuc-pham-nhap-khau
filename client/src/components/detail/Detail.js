@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; 
 import { formatPrice } from "../../untils";
+import { Helmet } from "react-helmet";
 
 function Detail(props) {
   const dispatch = useDispatch();
@@ -71,8 +72,43 @@ function Detail(props) {
     ],
   };
 
+  const productSchema = detailProduct ? {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": detailProduct.name,
+    "image": [detailProduct.image],
+    "description": detailProduct.description || `Mua ${detailProduct.name} chất lượng cao tại Nông Sản Việt.`,
+    "sku": detailProduct._id,
+    "brand": {
+      "@type": "Brand",
+      "name": "Nông Sản Việt"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": window.location.href,
+      "priceCurrency": "VND",
+      "price": detailProduct.salePrice, // Giá khuyến mãi
+      "availability": detailProduct.amount > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": detailProduct.rating || 5,
+      "reviewCount": detailProduct.numReviews || 1
+    }
+  } : null; 
+
   return (
     <section id="detail">
+      {detailProduct && (
+        <Helmet>
+          <title>{detailProduct.name} - Nông Sản Việt</title>
+          <meta name="description" content={`Chi tiết sản phẩm ${detailProduct.name} giá rẻ, tươi ngon.`} />
+          <script type="application/ld+json">
+            {JSON.stringify(productSchema)}
+          </script>
+        </Helmet>
+      )}
       {detailProduct ? (
         <div className="detail">
           <div className="detail-title">

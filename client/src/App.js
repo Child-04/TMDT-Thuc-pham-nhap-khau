@@ -15,6 +15,7 @@ import MyOrderPage from "./pages/MyOrderPage";
 import PaymentPage from "./pages/PaymentPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import Profile from "./components/Profile/Profile";
+import MessengerChat from "./components/MessengerChat/MessengerChat";
 
 function App() {
   return (
@@ -74,6 +75,9 @@ function App() {
         {/* <Route path='*'>
           <HomePage></HomePage>
         </Route> */}
+
+        <MessengerChat />
+        
       </Router>
     </div>
   );
