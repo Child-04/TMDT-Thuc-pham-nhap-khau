@@ -1,8 +1,9 @@
 import axios from "axios"
+import { BASE_URL } from '../constants/UserConstant';
 
 export const getAllConversationList = (product) => async (dispatch) => {
     try {
-        const {data} = await axios.get('http://localhost:4000/chat')
+        const {data} = await axios.get(`${BASE_URL}/chat`)
         dispatch({type: 'GET_ALL_CONVERSATION', payload: data})
     } catch (error) {
     }

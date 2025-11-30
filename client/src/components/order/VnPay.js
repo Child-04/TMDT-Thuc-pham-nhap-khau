@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { BASE_URL } from '../../constants/UserConstant';
 
 export default function VnPay() {
   const { order } = useSelector((state) => state.orderInfo);
@@ -15,7 +16,7 @@ export default function VnPay() {
     try {
       // Gửi yêu cầu đến server để tạo thanh toán
       const { data } = await axios.post(
-        "http://localhost:4000/payment/create",
+        `${BASE_URL}/payment/create`,
         OrderPaid
       );
 

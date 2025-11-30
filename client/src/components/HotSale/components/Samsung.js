@@ -4,7 +4,7 @@ import ListProduct from '../ListProduct'
 
 import {handlePercentDiscount} from '../../../untils/index'
 import { useDispatch} from 'react-redux';
-
+import { BASE_URL } from '../../../constants/UserConstant';
 
 function Samsung(props) {
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ function Samsung(props) {
     useEffect(() => {
         async function FetchApi(){
             try {
-                const {data} = await axios.get(`http://localhost:4000/products/${name}`)
+                const {data} = await axios.get(`${BASE_URL}/products/${name}`)
                 setHotSamsung(data)
             } catch (error) {
             }

@@ -3,10 +3,11 @@ import {useDispatch, useSelector} from 'react-redux'
 import { getAllConversationList, showConversation, updateIdConversation, updateLastMessageConversation } from '../../../../../actions/ChatAction';
 import ListConversation from './ListConversation';
 import io from 'socket.io-client'
+import { BASE_URL } from '../../../../../constants/UserConstant';
 
 function Contact(props) {
     let socket
-    const ENDPOINT = 'localhost:5000';
+    const ENDPOINT = BASE_URL;
     const dispatch = useDispatch()
     const conversationList = useSelector(state => state.chat.conversationList)
     const idConversation = useSelector(state => state.chat.idConversation)
