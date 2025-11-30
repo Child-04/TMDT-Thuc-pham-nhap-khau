@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import các icon
 import { formatPrice } from "../../untils";
+import ProductSEO from "../SEO/ProductSEO";
 function Detail(props) {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -104,6 +105,7 @@ function Detail(props) {
     <section id="detail">
       {detailProduct ? (
         <div className="detail">
+          <ProductSEO product={detailProduct} />
           <div className="detail-title">
             <h2>{detailProduct.name}</h2>
           </div>

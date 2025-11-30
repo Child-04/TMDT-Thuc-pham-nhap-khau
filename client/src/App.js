@@ -15,6 +15,7 @@ import ChatPage from "./pages/ChatPage";
 import PaymentPage from "./pages/PaymentPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import Profile from "./components/Profile/Profile";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -69,6 +70,10 @@ function App() {
 
         <Route path="/admin">
           <AdminPage></AdminPage>
+        </Route>
+        
+        <Route path="/about">
+          <AboutPage></AboutPage>
         </Route>
 
         {/* <Route path='*'>

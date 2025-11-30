@@ -14,6 +14,9 @@ function Footer(props) {
                         <h2>about</h2>
                         <ul>
                             <li>
+                                <a href="/about">Giới Thiệu</a>
+                            </li>
+                            <li>
                                 <a>Về Chúng Tôi</a>
                             </li>
                             <li>

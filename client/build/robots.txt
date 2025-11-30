@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /order
+Disallow: /payment
+Disallow: /MyOrder
+Disallow: /profile
+
+# Sitemap
+Sitemap: https://tmdt-thuc-pham-nhap-khau-client.onrender.com/sitemap.xml
