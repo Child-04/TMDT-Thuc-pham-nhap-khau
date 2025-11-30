@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; 
 import { formatPrice } from "../../untils";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 function Detail(props) {
   const dispatch = useDispatch();
