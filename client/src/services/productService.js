@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from '../constants/UserConstant';
 
 // Function to fetch paginated products from the route `/paginationClient/:page`
 export const getProductPagination = async (
@@ -9,7 +10,7 @@ export const getProductPagination = async (
   try {
     // Call API using Axios to the new route
     const response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/products/paginationClient/${page}`,
+      `${BASE_URL}/products/paginationClient/${page}`,
       {
         params: {
           perPage: perPage, // Send perPage as query parameter

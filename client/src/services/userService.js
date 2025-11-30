@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from '../constants/UserConstant';
 
 // Service để gọi API cập nhật thông tin người dùng
 export const updateUserProfile = async (userData) => {
@@ -18,9 +19,9 @@ export const updateUserProfile = async (userData) => {
       },
     };
 
-    // Gọi API với token và dữ liệu cập nhật, sử dụng URL từ env
+    // Gọi API với token và dữ liệu cập nhật, sử dụng BASE_URL
     const { data } = await axios.put(
-      `${process.env.REACT_APP_API_URL}/user/profile`, // Sử dụng biến môi trường cho URL API
+      `${BASE_URL}/user/profile`, // Sử dụng BASE_URL thống nhất
       userData,
       config
     );
