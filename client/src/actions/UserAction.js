@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { BASE_URL } from '../constants/UserConstant';
 
 export const login = (user) => async (dispatch) => {
     try {
-      const {data} = await axios.post('http://localhost:4000/user/login', user)
+      const {data} = await axios.post(`${BASE_URL}/user/login`, user)
       dispatch({ type: 'USER_LOGIN_SUCCESS', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
@@ -13,7 +14,7 @@ export const login = (user) => async (dispatch) => {
 
 export const SignupUser = (user) => async (dispatch) => {
     try {
-      const {data} = await axios.post('http://localhost:4000/user/register', user)
+      const {data} = await axios.post(`${BASE_URL}/user/register`, user)
       localStorage.setItem('userInfo', JSON.stringify(data));
       dispatch({ type: 'USER_SIGNUP_SUCCESS', payload: data });
       document.location.href = '/';
@@ -32,7 +33,7 @@ export const getAllUser = () => async (dispatch, getState) => {
     userSignin: {userInfo},
   } = getState()
   try {
-    const {data} = await  axios.get('http://localhost:4000/user')
+    const {data} = await  axios.get(`${BASE_URL}/user`)
     dispatch({type: 'GET_ALL_USER', payload: data})
   } catch (error) {
     dispatch({type: 'GET_ALL_USER_FAIL', payload: error.message})
@@ -44,7 +45,7 @@ export const deleteUser = (userId) => async (dispatch, getState) => {
     userSignin: {userInfo},
   } = getState()
   try {
-    const {data} = await axios.delete(`http://localhost:4000/user/delete/${userId}`)
+    const {data} = await axios.delete(`${BASE_URL}/user/delete/${userId}`)
     dispatch({type: 'DELETE_USER', payload: data})
   } catch (error) {
     dispatch({type: 'DELETE_USER_FAIL', error: error.message})

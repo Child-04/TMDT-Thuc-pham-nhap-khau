@@ -4,10 +4,11 @@ import io from "socket.io-client";
 import { useSelector } from "react-redux";
 import ListMessage from "./ListMessage";
 import TypeMessage from "./TypeMessage";
+import { BASE_URL } from '../../../../../constants/UserConstant';
 
 function Chat(props) {
   let socket;
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = BASE_URL;
   const [messages, setMessages] = useState([]);
   const { userInfo } = useSelector((state) => state.userSignin);
   const idConversation = useSelector((state) => state.chat.idConversation);
@@ -17,7 +18,7 @@ function Chat(props) {
     if (!idConversation) return;
     const getAllMessageByConversation = async () => {
       const { data } = await axios.get(
-        `http://localhost:4000/chat/message?idConversation=${idConversation}`
+        `${BASE_URL}/chat/message?idConversation=${idConversation}`
       );
       setMessages(data.messageList);
     };
@@ -56,7 +57,7 @@ function Chat(props) {
       idConversation,
     };
     const { data } = await axios.post(
-      "http://localhost:4000/chat/save",
+      `${BASE_URL}/chat/save`,
       payload
     );
     socket.emit('chat', data);

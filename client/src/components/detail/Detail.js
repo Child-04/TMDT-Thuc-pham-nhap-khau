@@ -111,8 +111,6 @@ function Detail(props) {
       )}
       {detailProduct ? (
         <div className="detail">
-          <ProductSEO product={detailProduct} />
-          <DetailSEOContent />
           <div className="detail-title">
             <h2>{detailProduct.name}</h2>
           </div>

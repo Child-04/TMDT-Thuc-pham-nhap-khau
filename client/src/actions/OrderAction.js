@@ -1,4 +1,6 @@
 import axios from "axios";
+import { BASE_URL } from '../constants/UserConstant';
+
 let config = {
   headers: {
     "Content-Type": "application/json",
@@ -12,7 +14,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       userSignin: { userInfo },
     } = getState();
     const { data } = await axios.post(
-      "http://localhost:4000/order/create",
+      `${BASE_URL}/order/create`,
       order,
       {
         headers: {
@@ -34,7 +36,7 @@ export const updateOrder = (orderId, order) => async (dispatch, getState) => {
     } = getState();
     
     const { data } = await axios.post(
-      `http://localhost:4000/order/update/${orderId}`,
+      `${BASE_URL}/order/update/${orderId}`,
       order,
       {
         headers: {
@@ -50,7 +52,7 @@ export const updateOrder = (orderId, order) => async (dispatch, getState) => {
 export const cancelOrder = (orderId) => async (dispatch, getState) => {
   try {
     const { data } = await axios.post(
-      `http://localhost:4000/order/cancel/${orderId}`,
+      `${BASE_URL}/order/cancel/${orderId}`,
     );
     dispatch({ type: "CANCEL_ORDER", payload: data });
   } catch (error) {
@@ -62,7 +64,7 @@ export const getAllOrder = () => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.get(`http://localhost:4000/order/`, {
+    const { data } = await axios.get(`${BASE_URL}/order/`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -97,7 +99,7 @@ export const GetAllOrderPendding = () => async (dispatch, getState) => {
       userSignin: { userInfo },
     } = getState();
     const { data } = await axios.get(
-      `http://localhost:4000/order/orderPendding`,
+      `${BASE_URL}/order/orderPendding`,
       {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -115,7 +117,7 @@ export const GetAllOrderShipping = () => async (dispatch, getState) => {
       userSignin: { userInfo },
     } = getState();
     const { data } = await axios.get(
-      `http://localhost:4000/order/orderShipping`,
+      `${BASE_URL}/order/orderShipping`,
       {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -132,7 +134,7 @@ export const GetAllOrderPaid = () => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.get(`http://localhost:4000/order/orderPaid`, {
+    const { data } = await axios.get(`${BASE_URL}/order/orderPaid`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -148,7 +150,7 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => {
       userSignin: { userInfo },
     } = getState();
     const { data } = await axios.delete(
-      `http://localhost:4000/order/delete/${orderId}`,
+      `${BASE_URL}/order/delete/${orderId}`,
       {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -167,7 +169,7 @@ export const ShippingOrder = (orderId) => async (dispatch, getState) => {
     } = getState();
 
     const { data } = await axios.put(
-      `http://localhost:4000/order/shipping/${orderId}`,
+      `${BASE_URL}/order/shipping/${orderId}`,
       {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -185,7 +187,7 @@ export const CompletedOrder = (orderId) => async (dispatch, getState) => {
     } = getState();
 
     const { data } = await axios.put(
-      `http://localhost:4000/order/completed/${orderId}`,
+      `${BASE_URL}/order/completed/${orderId}`,
       {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -203,7 +205,7 @@ export const PaidOrder = (orderId) => async (dispatch, getState) => {
     } = getState();
 
     const { data } = await axios.put(
-      `http://localhost:4000/order/paid/${orderId}`,
+      `${BASE_URL}/order/paid/${orderId}`,
       {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -271,7 +273,7 @@ export const getOrderByUser = (idUser) => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.get(`http://localhost:4000/order/${idUser}`, {
+    const { data } = await axios.get(`${BASE_URL}/order/${idUser}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -288,7 +290,7 @@ export const getOrderPenddingByUser = (idUser) => async (dispatch, getState) => 
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.get(`http://localhost:4000/order/orderPendding/${idUser}`, {
+    const { data } = await axios.get(`${BASE_URL}/order/orderPendding/${idUser}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -303,7 +305,7 @@ export const getOrderShippingByUser = (idUser) => async (dispatch, getState) => 
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.get(`http://localhost:4000/order/orderShipping/${idUser}`, {
+    const { data } = await axios.get(`${BASE_URL}/order/orderShipping/${idUser}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -317,7 +319,7 @@ export const getOrderCompleteByUser = (idUser) => async (dispatch, getState) => 
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.get(`http://localhost:4000/order/orderComplete/${idUser}`, {
+    const { data } = await axios.get(`${BASE_URL}/order/orderComplete/${idUser}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -331,7 +333,7 @@ export const getOrderPaidByUser = (idUser) => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.get(`http://localhost:4000/order/orderPaid/${idUser}`, {
+    const { data } = await axios.get(`${BASE_URL}/order/orderPaid/${idUser}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -347,7 +349,7 @@ export const payOrder = (order, paymentResult) => async (dispatch, getState) => 
     } = getState();
     try {
       const { data } = axios.put(
-        `http://localhost:4000/order/pay/${order._id}`,
+        `${BASE_URL}/order/pay/${order._id}`,
         paymentResult,
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
