@@ -11,7 +11,7 @@ function Product(props) {
 
     return (
         <div className="hotsale-listproduct-product">
-            <a href={"/detail/" + product._id}>
+            <a href={"/detail/" + product.slug}>
                 <img src={product.image}></img>
                 <p className="hotsale-listproduct-product-name">{product.name}</p>
                 <div className="price">

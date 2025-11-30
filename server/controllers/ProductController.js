@@ -16,12 +16,19 @@ export const getAllProduct = expressAsyncHandler(async (req, res) => {
 });
 
 export const findProductById = expressAsyncHandler(async (req, res) => {
-  const product = await ProductModel.findById({ _id: req.params.id });
+const slug = req.params.id;
+console.log("---------------------------------");
+  console.log("1. Server đang tìm slug:", slug);
+  
+  const product = await ProductModel.findOne({ slug: slug });
+  
+  console.log("2. Kết quả tìm thấy:", product ? "CÓ" : "KHÔNG");
+  // ----------------------------
 
   if (product) {
     res.send(product);
   } else {
-    res.send({ message: "product not found" });
+    res.status(404).send({ message: "product not found" });
   }
 });
 

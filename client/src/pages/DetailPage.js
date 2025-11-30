@@ -11,7 +11,7 @@ function DetailPage(props) {
     <div>
       <Header></Header>
       <Detail></Detail>
-      {userInfo ? <AppChat></AppChat> : ""}
+      {/* {userInfo ? <AppChat></AppChat> : ""} */}
       <ScrollToTop></ScrollToTop>
     </div>
   );

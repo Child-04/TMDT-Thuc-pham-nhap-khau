@@ -21,13 +21,13 @@ import { upload } from "../untils/until.js";
 
 const ProductRouter = express.Router();
 
-ProductRouter.get("/:type", filterProductByType);
+
 ProductRouter.post("/filter/random", filterProductByRandomField);
 ProductRouter.get("/detail/:id", findProductById);
 ProductRouter.get("/", getAllProduct);
 ProductRouter.get(`/pagination/:page`, paginationProduct);
 ProductRouter.get(`/paginationClient/:page`, paginationProductClient);
-
+ProductRouter.get("/:type", filterProductByType);
 ProductRouter.post("/rate/:id/:userId", RateProduct);
 
 // Comment on a product with the product ID and user ID

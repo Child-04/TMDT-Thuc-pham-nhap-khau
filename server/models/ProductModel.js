@@ -30,6 +30,7 @@ const commentProduct = new Schema({
 const Product = new Schema(
   {
     name: { type: String, required: true },
+    slug: { type: String, required: true, unique: true }, 
     price: { type: Number, required: true },
     salePrice: { type: Number, required: true },
     type: { type: String, required: true },

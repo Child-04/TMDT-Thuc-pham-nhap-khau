@@ -24,6 +24,7 @@ export const data = {
         {
             "id": 1,
             "name": "Táo nhập khẩu Fuji Nhật Bản (kg)",
+            "slug": "tao-nhap-khau-fuji-nhat-ban",
             "price": 150000,
             "salePrice": 130000,
             "type": "Rau sạch",
@@ -42,6 +43,7 @@ export const data = {
         {
             "id": 2,
             "name": "Nho nhập khẩu Mỹ (kg)",
+            "slug": "nho-nhap-khau-my",
             "price": 220000,
             "salePrice": 200000,
             "type": "rau củ",
@@ -60,6 +62,7 @@ export const data = {
         {
             "id": 3,
             "name": "Thịt bò Úc (kg)",
+            "slug": "thit-bo-uc",
             "price": 500000,
             "salePrice": 470000,
             "type": "thịt sạch",
@@ -78,6 +81,7 @@ export const data = {
         {
             "id": 4,
             "name": "Sữa hạnh nhân nhập khẩu Mỹ (1 lít)",
+            "slug": "sua-hanh-nhan-nhap-khau-my",
             "price": 75000,
             "salePrice": 70000,
             "type": "khác",
@@ -96,6 +100,7 @@ export const data = {
         {
             "id": 5,
             "name": "Cá hồi Na Uy (kg)",
+            "slug": "ca-hoi-na-uy",
             "price": 600000,
             "salePrice": 550000,
             "type": "khác",
@@ -114,6 +119,7 @@ export const data = {
         {
             "id": 6,
             "name": "Bơ nhập khẩu Mexico (kg)",
+            "slug": "bo-nhap-khau-mexico",
             "price": 180000,
             "salePrice": 170000,
             "type": "khác",
@@ -132,6 +138,7 @@ export const data = {
         {
             "id": 7,
             "name": "Mì Ý Barilla (500g)",
+            "slug": "mi-y-barilla",
             "price": 50000,
             "salePrice": 45000,
             "type": "khác",
@@ -150,6 +157,7 @@ export const data = {
         {
             "id": 8,
             "name": "Dầu ô liu Extra Virgin (500ml)",
+            "slug": "dau-o-liu-extra-virgin",
             "price": 200000,
             "salePrice": 180000,
             "type": "khác",
@@ -168,6 +176,7 @@ export const data = {
         {
             "id": 9,
             "name": "Trà xanh Nhật Bản (100g)",
+            "slug": "tra-xanh-nhat-ban",
             "price": 150000,
             "salePrice": 140000,
             "type": "khác",
@@ -186,6 +195,7 @@ export const data = {
         {
             "id": 10,
             "name": "Phô mai Cheddar Anh (500g)",
+            "slug": "pho-mai-cheddar-anh",
             "price": 250000,
             "salePrice": 230000,
             "type": "khác",

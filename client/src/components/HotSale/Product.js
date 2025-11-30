@@ -32,7 +32,7 @@ function Product(props) {
 
     return (
         <div className="hotsale-listproduct-product">
-            <Link to={"/detail/" + product._id}>
+            <Link to={"/detail/" + product.slug}>
                 <img src={product.image}></img>
                 <p className="hotsale-listproduct-product-name">{product.name}</p>
                 <div className="price">

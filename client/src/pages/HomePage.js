@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/header/Header';
 import Carousel from '../components/Slider/Carousel';
 import Footer from '../components/footer/Footer'
-import AppChat from '../components/AppChat/AppChat'
+//import AppChat from '../components/AppChat/AppChat'
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop'
 import { useSelector } from 'react-redux';
 import Vet from '../components/HotSale/components/Vet';
@@ -21,9 +21,9 @@ function HomePage(props) {
             <Other></Other>
             <Footer></Footer>
             <ScrollToTop></ScrollToTop>
-            {
+            {/* {
                 userInfo && userInfo.isAdmin === false ? (<AppChat></AppChat>) : ""
-            }
+            } */}
         </div>
     );
 }
