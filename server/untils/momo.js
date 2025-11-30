@@ -1,15 +1,34 @@
 import crypto from 'crypto';
 import https from 'https';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Cấu hình đường dẫn chính xác tới file .env (Từ thư mục untils lùi ra 1 cấp về thư mục gốc)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 export async function createMoMoPayment(amount, orderInfo) {
     const partnerCode = process.env.MOMO_PARTNER_CODE;
     const accessKey = process.env.MOMO_ACCESS_KEY;
     const secretkey = process.env.MOMO_SECRET_KEY;
 
+    // --- LOG KIỂM TRA (Sẽ hiện trong Terminal server) ---
+    console.log("-----------------------------------------");
+    console.log("🔍 Đang kiểm tra cấu hình MoMo:");
+    console.log("PartnerCode:", partnerCode);
+    console.log("AccessKey:", accessKey ? "Đã có" : "❌ Thiếu (Undefined)");
+    console.log("SecretKey:", secretkey ? "Đã có" : "❌ Thiếu (Undefined)");
+    console.log("-----------------------------------------");
+    
+    if (!secretkey) {
+        throw new Error("MOMO_SECRET_KEY đang bị thiếu. Hãy kiểm tra file .env!");
+    }
+
     const requestId = partnerCode + new Date().getTime();
     const orderId = requestId;
 
-    const redirectUrl = process.env.MOMO_REDIRECT_URL; //const redirectUrl = "http://localhost:3000/payment-return";
+    const redirectUrl = process.env.MOMO_REDIRECT_URL; 
     const ipnUrl = process.env.MOMO_IPN_URL;
     const requestType = "captureWallet";
     const extraData = "";

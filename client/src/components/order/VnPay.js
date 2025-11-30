@@ -2,8 +2,7 @@ import React from "react";
 
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { BASE_URL } from '../../constants/UserConstant';
-import { useSelector } from 'react-redux';
+import { BASE_URL } from '../../constants/UserConstant';    
 
 export default function VnPay(props) {
     // 1. Nhận dữ liệu từ Component Cha

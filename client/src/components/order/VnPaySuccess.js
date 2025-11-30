@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { BASE_URL } from '../../constants/UserConstant';
 import { useLocation, Link } from "react-router-dom";
 import { CheckOutlined, CloseCircleOutlined } from '@ant-design/icons';
