@@ -53,6 +53,10 @@ export const CartReducer = (state = {cartItems: []}, action) => {
         case 'CART_EMTY':{
             return {...state, cartItems: []}
         }
+
+    //     case CART_SAVE_SHIPPING_ADDRESS:
+    //   return { ...state, shippingAddress: action.payload };
+
         default:
             return state;
     }
