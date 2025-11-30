@@ -48,7 +48,7 @@ function AllComment(props) {
               <div style={{ display: "flex" }}>
                 {comment.isAdmin ? (
                   <div className="all-comment-info-name admin">
-                    <img src="https://cellphones.com.vn/skin/frontend/default/cpsdesktop/images/media/logo.png"></img>
+                    <img src="https://cellphones.com.vn/skin/frontend/default/cpsdesktop/images/media/logo.png" alt="Avatar người dùng - Bình luận sản phẩm"></img>
                   </div>
                 ) : (
                   <div className="all-comment-info-name">

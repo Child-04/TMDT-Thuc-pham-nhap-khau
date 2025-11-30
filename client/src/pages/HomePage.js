@@ -48,6 +48,91 @@ function HomePage(props) {
             </Helmet>
             <Header></Header>
             <Carousel></Carousel>
+            
+            {/* SEO Content Section */}
+            <div style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto', backgroundColor: '#f8f9fa' }}>
+                <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                    <h1 style={{ fontSize: '2.5em', color: '#2c3e50', marginBottom: '20px' }}>
+                        Nông sản Việt Nam - Thực phẩm nhập khẩu chất lượng hàng đầu
+                    </h1>
+                    <p style={{ fontSize: '1.2em', color: '#7f8c8d', lineHeight: '1.8', maxWidth: '800px', margin: '0 auto' }}>
+                        Chào mừng bạn đến với Nông sản Việt Nam, nơi cung cấp những sản phẩm thực phẩm nhập khẩu chất lượng cao từ khắp thế giới. Chúng tôi tự hào mang đến cho khách hàng Việt Nam những sản phẩm tươi ngon, an toàn và dinh dưỡng với mức giá cạnh tranh nhất thị trường.
+                    </p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginBottom: '40px' }}>
+                    <div style={{ background: 'white', padding: '25px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
+                        <h2 style={{ color: '#27ae60', marginBottom: '15px', fontSize: '1.5em' }}>🌱 Thực phẩm Organic</h2>
+                        <p style={{ lineHeight: '1.6', fontSize: '1.1em' }}>
+                            Khám phá bộ sưu tập thực phẩm hữu cơ được chứng nhận quốc tế. Từ rau củ quả tươi đến các sản phẩm chế biến, tất cả đều đảm bảo không chất bảo quản có hại, không thuốc trừ sâu, mang đến sự an toàn tuyệt đối cho gia đình bạn.
+                        </p>
+                    </div>
+                    
+                    <div style={{ background: 'white', padding: '25px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
+                        <h2 style={{ color: '#e74c3c', marginBottom: '15px', fontSize: '1.5em' }}>🍷 Đồ uống cao cấp</h2>
+                        <p style={{ lineHeight: '1.6', fontSize: '1.1em' }}>
+                            Thưởng thức những loại rượu vang danh tiếng từ Pháp, Italia, Tây Ban Nha cùng với các loại nước trái cây tự nhiên, trà và cà phê đặc biệt từ những vùng sản xuất nổi tiếng nhất thế giới.
+                        </p>
+                    </div>
+                    
+                    <div style={{ background: 'white', padding: '25px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
+                        <h2 style={{ color: '#3498db', marginBottom: '15px', fontSize: '1.5em' }}>🧀 Sản phẩm từ sữa</h2>
+                        <p style={{ lineHeight: '1.6', fontSize: '1.1em' }}>
+                            Bộ sưu tập phô mai châu Âu đa dạng, bơ tươi New Zealand, sữa chua Hy Lạp và các sản phẩm từ sữa chất lượng cao khác, đảm bảo nguồn gốc rõ ràng và hương vị tuyệt vời.
+                        </p>
+                    </div>
+                </div>
+
+                <div style={{ background: 'white', padding: '30px', borderRadius: '15px', marginBottom: '40px' }}>
+                    <h2 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '30px', fontSize: '2em' }}>
+                        Tại sao chọn Nông sản Việt Nam?
+                    </h2>
+                    
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '25px' }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '3em', marginBottom: '15px' }}>✅</div>
+                            <h3 style={{ color: '#27ae60', marginBottom: '10px' }}>Chất lượng đảm bảo</h3>
+                            <p style={{ fontSize: '1em', lineHeight: '1.6' }}>
+                                Tất cả sản phẩm đều được kiểm tra nghiêm ngặt về chất lượng, nguồn gốc xuất xứ và đảm bảo an toàn thực phẩm theo tiêu chuẩn quốc tế.
+                            </p>
+                        </div>
+                        
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '3em', marginBottom: '15px' }}>🚚</div>
+                            <h3 style={{ color: '#e74c3c', marginBottom: '10px' }}>Giao hàng nhanh chóng</h3>
+                            <p style={{ fontSize: '1em', lineHeight: '1.6' }}>
+                                Hệ thống logistics hiện đại, giao hàng trong ngày tại TP.HCM và 2-3 ngày cho các tỉnh thành khác. Miễn phí vận chuyển cho đơn hàng trên 500k.
+                            </p>
+                        </div>
+                        
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '3em', marginBottom: '15px' }}>💰</div>
+                            <h3 style={{ color: '#f39c12', marginBottom: '10px' }}>Giá cả cạnh tranh</h3>
+                            <p style={{ fontSize: '1em', lineHeight: '1.6' }}>
+                                Cam kết mang đến những sản phẩm chất lượng cao với mức giá tốt nhất thị trường. Thường xuyên có các chương trình khuyến mãi hấp dẫn.
+                            </p>
+                        </div>
+                        
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '3em', marginBottom: '15px' }}>🛡️</div>
+                            <h3 style={{ color: '#9b59b6', marginBottom: '10px' }}>Dịch vụ chu đáo</h3>
+                            <p style={{ fontSize: '1em', lineHeight: '1.6' }}>
+                                Đội ngũ tư vấn chuyên nghiệp 24/7, chính sách đổi trả linh hoạt và hỗ trợ khách hàng tận tình trong suốt quá trình mua sắm.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={{ textAlign: 'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '40px', borderRadius: '15px' }}>
+                    <h2 style={{ fontSize: '2em', marginBottom: '20px' }}>
+                        Trải nghiệm mua sắm trực tuyến tuyệt vời
+                    </h2>
+                    <p style={{ fontSize: '1.2em', lineHeight: '1.8', marginBottom: '20px', maxWidth: '800px', margin: '0 auto' }}>
+                        Với giao diện thân thiện, dễ sử dụng và hệ thống thanh toán an toàn, Nông sản Việt Nam mang đến cho bạn trải nghiệm mua sắm online thuận tiện và đáng tin cậy. Hãy khám phá hàng ngàn sản phẩm chất lượng và đặt hàng ngay hôm nay!
+                    </p>
+                </div>
+            </div>
+            
             <Vet></Vet>
             <Meat></Meat>
             <Other></Other>

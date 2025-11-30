@@ -35,7 +35,7 @@ function PenddingOrder(props) {
   const orderItem = (item) => (
     <div className="all-myorder-item">
       <div className="all-myorder-item-img">
-        <img src={item.image}></img>
+        <img src={item.image} alt={`Đơn hàng đang chờ xử lý - ${item.name}`}></img>
       </div>
       <div className="all-myorder-item-name">
         <p>{item.name}</p>

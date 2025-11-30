@@ -68,7 +68,7 @@ function AdminCreate(props) {
       }
       onClick={() => HandleFilterProductByType(item.name)}
     >
-      <img src={item.img}></img>
+      <img src={item.img} alt={`Tạo mới sản phẩm ${item.name || 'Hình ảnh sản phẩm'}`}></img>
     </div>
   );
 

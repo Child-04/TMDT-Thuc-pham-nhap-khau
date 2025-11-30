@@ -23,7 +23,7 @@ function Product(props) {
     <tr>
       <td>{number + 1}</td>
       <td>
-        <img src={product.image}></img>
+        <img src={product.image} alt={`Quản lý sản phẩm ${product.name}`}></img>
       </td>
       <td>{product.name}</td>
       <td>{formatPrice(product.salePrice)}</td>
