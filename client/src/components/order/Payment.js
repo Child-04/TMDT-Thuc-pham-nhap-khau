@@ -5,6 +5,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { createOrder, payOrder } from "../../actions/OrderAction";
 import { useHistory } from "react-router-dom";
 import VnPay from "./VnPay";
+import { BASE_URL } from '../../constants/UserConstant';
 
 export default function Payment() {
   const history = useHistory();
@@ -51,7 +52,7 @@ export default function Payment() {
   useEffect(() => {
     const addPayPalScript = async () => {
       const { data } = await axios.get(
-        "http://localhost:4000/api/config/paypal"
+        `${BASE_URL}/api/config/paypal`
       );
       const script = document.createElement("script");
       script.type = "text/javascript";

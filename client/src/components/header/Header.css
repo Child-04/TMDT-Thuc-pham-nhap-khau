@@ -18,14 +18,37 @@
     display: flex;
     align-items: center;
 }
-.logo{
-   display: flex;
-   justify-content: flex-start;
+.logo {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 5px 0; /* Tạo khoảng thở nhẹ */
 }
-.logo span a{
-    font-size: 25px;
-    color: #fff;
-    margin-right: 1rem;
+
+/* Reset mặc định của thẻ H1 */
+.logo h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 1; /* Giúp logo gọn gàng hơn */
+}
+
+/* Style chính cho chữ Logo */
+.logo h1 a {
+  font-size: 26px;      /* Kích thước chữ lớn vừa phải */
+  font-weight: 800;     /* Chữ rất đậm để tạo điểm nhấn */
+  text-transform: uppercase; /* Viết hoa toàn bộ: NÔNG SẢN VIỆT */
+  letter-spacing: 1.5px; /* Khoảng cách giữa các chữ cái cho thoáng */
+  color: #ffffff;       /* Màu trắng */
+  text-decoration: none; /* Bỏ gạch chân */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Bóng đổ nhẹ giúp chữ nổi bật trên nền đỏ/xanh */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+  margin-right: 25px;
+}
+
+/* Hiệu ứng khi di chuột vào Logo */
+.logo h1 a:hover {
+  color: #f0ad4e; /* Đổi sang màu vàng cam khi hover */
+  text-shadow: 0 0 10px rgba(240, 173, 78, 0.6); /* Hiệu ứng phát sáng nhẹ */
+  transform: scale(1.02); /* Phóng to cực nhẹ tạo cảm giác bấm được */
 }
 .menu-list {
     display: flex;

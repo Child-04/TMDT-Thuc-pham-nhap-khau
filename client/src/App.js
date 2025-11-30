@@ -15,6 +15,8 @@ import MyOrderPage from "./pages/MyOrderPage";
 import PaymentPage from "./pages/PaymentPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import Profile from "./components/Profile/Profile";
+import MessengerChat from "./components/MessengerChat/MessengerChat";
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -70,10 +72,17 @@ function App() {
         <Route path="/admin">
           <AdminPage></AdminPage>
         </Route>
+        
+        <Route path="/about">
+          <AboutPage></AboutPage>
+        </Route>
 
         {/* <Route path='*'>
           <HomePage></HomePage>
         </Route> */}
+
+        <MessengerChat />
+
       </Router>
     </div>
   );

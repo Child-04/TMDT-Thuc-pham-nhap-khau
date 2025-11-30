@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./Detail.css";
 import DetailInfo from "./DetailInfo";
 import RateStar from "./RateStar";
-import { useParams, Link } from "react-router-dom"; // Thêm Link vào đây
+import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProduct, getproductById } from "../../actions/ProductAction";
 import CommentProduct from "./CommentProduct";
@@ -13,25 +13,26 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; 
 import { formatPrice } from "../../untils";
 
+// 1. Chỉ import ProductSEO, không import Helmet ở đây nữa để tránh trùng
+import ProductSEO from '../SEO/ProductSEO';
+
+// 2. Import nút Share Facebook (theo yêu cầu đề bài 1.5đ)
+import { FacebookShareButton, FacebookIcon } from "react-share";
+
 function Detail(props) {
   const dispatch = useDispatch();
-  const { id } = useParams(); // id ở đây chính là slug (vd: tao-nhap-khau)
+  const { id } = useParams(); 
   const detailProduct = useSelector((state) => state.getProductById.product);
   const product = useSelector((state) => state.allProduct.product);
 
-  console.log("Slug từ URL:", id);
-  console.log("Dữ liệu detailProduct:", detailProduct);
-
   useEffect(() => {
     dispatch(getAllProduct());
-    // Đã xóa đoạn cleanup return [] bị sai
   }, [dispatch]);
 
   useEffect(() => {
     dispatch(getproductById(id));
   }, [dispatch, id]);
 
-  // Lọc sản phẩm tương tự
   const relatedProducts = product
     ? product
         .filter(
@@ -40,44 +41,26 @@ function Detail(props) {
         .slice(0, 10)
     : [];
 
-  const NextArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div className="slick-arrow slick-next" onClick={onClick} style={styles.arrow}>
-        <FaArrowRight size={30} />
-      </div>
-    );
-  };
+  const NextArrow = (props) => { const { onClick } = props; return (<div className="slick-arrow slick-next" onClick={onClick} style={styles.arrow}><FaArrowRight size={30} /></div>); };
+  const PrevArrow = (props) => { const { onClick } = props; return (<div className="slick-arrow slick-prev" onClick={onClick} style={styles.arrow}><FaArrowLeft size={30} /></div>); };
+  const settings = { dots: true, infinite: relatedProducts.length > 4, speed: 500, slidesToShow: 4, slidesToScroll: 1, responsive: [ { breakpoint: 1024, settings: { slidesToShow: 3 } }, { breakpoint: 600, settings: { slidesToShow: 2 } }, { breakpoint: 480, settings: { slidesToShow: 1 } }, ], };
 
-  const PrevArrow = (props) => {
-    const { onClick } = props;
-    return (
-      <div className="slick-arrow slick-prev" onClick={onClick} style={styles.arrow}>
-        <FaArrowLeft size={30} />
-      </div>
-    );
-  };
-
-  const settings = {
-    dots: true,
-    infinite: relatedProducts.length > 4, // Chỉ infinite nếu có nhiều hơn 4 sp
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 600, settings: { slidesToShow: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
-    ],
-  };
+  // URL hiện tại để share
+  const currentUrl = window.location.href;
 
   return (
     <section id="detail">
       {detailProduct ? (
         <div className="detail">
+          {/* 3. GỌI COMPONENT SEO Ở ĐÂY (Đã xóa đoạn Helmet thủ công bị trùng) */}
+          <ProductSEO product={detailProduct} />
+          
+          {/* 4. ĐÃ XÓA thẻ <DetailSEOContent /> vì nó gây lỗi Crash App */}
+
           <div className="detail-title">
             <h2>{detailProduct.name}</h2>
           </div>
+          
           <div className="detail-info">
             <div className="detail-info-slide">
               <div className="detail-info-slide-image">
@@ -86,6 +69,20 @@ function Detail(props) {
             </div>
             <DetailInfo product={detailProduct} />
           </div>
+
+          {/* 5. THÊM NÚT SHARE FACEBOOK (Quan trọng cho điểm số) */}
+          <div style={{ margin: "20px 0", display: "flex", alignItems: "center", gap: "10px" }}>
+              <span style={{ fontWeight: "bold", color: "#333" }}>Chia sẻ ngay:</span>
+              <FacebookShareButton 
+                  url={currentUrl} 
+                  quote={`Sản phẩm ${detailProduct.name} giá cực tốt!`}
+                  hashtag="#nongsanviet"
+              >
+                  <FacebookIcon size={36} round={true} />
+              </FacebookShareButton>
+          </div>
+          {/* ----------------------------------------------------- */}
+
           <div><BlogContent /></div>
           <div><RateStar /></div>
           <div><CommentProduct /></div>
@@ -96,12 +93,8 @@ function Detail(props) {
               <Slider {...settings}>
                 {relatedProducts.map((product) => (
                   <div key={product._id} className="related-product-item" style={styles.relatedProductItem}>
-                    <Link to={`/detail/${product.slug}`}> {/* QUAN TRỌNG: Dùng Link thay vì thẻ a */}
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        style={styles.relatedProductImage}
-                      />
+                    <Link to={`/detail/${product.slug}`}> 
+                      <img src={product.image} alt={product.name} style={styles.relatedProductImage} />
                       <p style={styles.relatedProductName}>{product.name}</p>
                       <p style={styles.relatedProductPrice}>{formatPrice(product.price)}đ</p>
                     </Link>
@@ -124,14 +117,8 @@ export default Detail;
 
 const styles = {
   relatedProducts: { marginTop: "30px" },
-  relatedProductItem: {
-    width: "250px", height: "350px", padding: "15px", textAlign: "center",
-    backgroundColor: "#fff", transition: "transform 0.3s ease", cursor: "pointer",
-    borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", marginRight: "15px",
-  },
-  relatedProductImage: {
-    width: "100%", height: "300px", objectFit: "cover", marginBottom: "10px", borderRadius: "18px",
-  },
+  relatedProductItem: { width: "250px", height: "350px", padding: "15px", textAlign: "center", backgroundColor: "#fff", transition: "transform 0.3s ease", cursor: "pointer", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", marginRight: "15px", },
+  relatedProductImage: { width: "100%", height: "300px", objectFit: "cover", marginBottom: "10px", borderRadius: "18px", },
   relatedProductName: { fontSize: "16px", fontWeight: "bold", marginBottom: "5px", color: "#333", textDecoration: "none" },
   relatedProductPrice: { fontSize: "14px", color: "#d70018" },
   arrow: { zIndex: 999, position: "absolute", top: "50%", transform: "translateY(-50%)", cursor: "pointer", color: "#000" },

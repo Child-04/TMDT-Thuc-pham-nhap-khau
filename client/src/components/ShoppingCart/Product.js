@@ -29,7 +29,7 @@ function Product(props) {
         <div className="shopping-cart-list-product">
             <div className="shopping-cart-list-product-block">
                 <div className="shopping-cart-list-product-block-left">
-                    <img src={product.image}></img>
+                    <img src={product.image} alt={`Sản phẩm ${product.name}`}></img>
                 </div>
                 <div className="shopping-cart-list-product-block-right">
                     <p className="product-name">

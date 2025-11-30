@@ -6,11 +6,12 @@ import ListMessage from "./Components/ListMessage.js/ListMessage";
 import TypeMessage from "./Components/TypeMessage/TypeMessage";
 import './AppChat.css'
 import { LineOutlined } from '@ant-design/icons';
+import { BASE_URL } from '../../constants/UserConstant';
 
 let socket;
 
 function AppChat(props) {
-  const ENDPOINT = "http://localhost:4000";
+  const ENDPOINT = BASE_URL;
   const [messages, setMessages] = useState([]);
   const [openChat, setOpenChat] = useState(false)
   const { userInfo } = useSelector((state) => state.userSignin)
@@ -18,7 +19,7 @@ function AppChat(props) {
   useEffect(() => {
     const getAllMessageByConversation = async () => {
       const {data}  = await axios.get(
-        `http://localhost:4000/chat/message?idUser=${userInfo._id}`
+        `${BASE_URL}/chat/message?idUser=${userInfo._id}`
       );
       setMessages(data.messageList);
     }
@@ -64,7 +65,7 @@ function AppChat(props) {
           message,
           idConversation: conversation._id,
         };
-        const {data} = await axios.post('http://localhost:4000/chat/save', payload);
+        const {data} = await axios.post(`${BASE_URL}/chat/save`, payload);
         socket.emit('chat', data);
       });
     } else {
@@ -75,7 +76,7 @@ function AppChat(props) {
         message,
         idConversation,
       };
-      const {data} = await axios.post('http://localhost:4000/chat/save', payload)
+      const {data} = await axios.post(`${BASE_URL}/chat/save`, payload)
       socket.emit('chat', data);
     } 
   };

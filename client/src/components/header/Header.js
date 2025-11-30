@@ -42,9 +42,9 @@ function Header(props) {
     <div className="header">
       <section id="menu">
         <div className="logo">
-          <span>
+          <h1>
             <Link to="/"> NÔNG SẢN VIỆT </Link>
-          </span>
+          </h1>
         </div>
         <div className="search">
           <form onSubmit={(e) => SearchProduct(e)}>
