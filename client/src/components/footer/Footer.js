@@ -29,7 +29,7 @@ function Footer(props) {
                                 <a>Cửa Hàng</a>
                             </li>
                             {/* <li>
-                                    <a><img src="https://theme.hstatic.net/1000075078/1000610097/14/gov.png?v=664"></img></a>
+                                    <a><img src="https://theme.hstatic.net/1000075078/1000610097/14/gov.png?v=664" alt="Logo Bộ Công Thương - Chứng nhận website thương mại điện tử"></img></a>
                                 </li> */}
                         </ul>
                     </div>
