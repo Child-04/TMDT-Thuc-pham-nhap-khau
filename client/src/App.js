@@ -71,6 +71,10 @@ function App() {
         <Route path="/admin">
           <AdminPage></AdminPage>
         </Route>
+        
+        <Route path="/about">
+          <AboutPage></AboutPage>
+        </Route>
 
         {/* <Route path='*'>
           <HomePage></HomePage>

@@ -19,7 +19,7 @@ export default function AllTypeProduct() {
 
   const MenuFirmProduct = (firmItem) => (
     <div className="filter-menu-firm-item">
-      <img src={firmItem.img}></img>
+      <img src={firmItem.img} alt={`Danh mục sản phẩm ${firmItem.name || 'Loại sản phẩm'}`}></img>
       <div className="filter-menu-firm-item-delete" onClick={() => handleRemoveItem(firmItem)}>
         <span>
           <CloseOutlined></CloseOutlined>

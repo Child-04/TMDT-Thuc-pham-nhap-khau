@@ -31,7 +31,7 @@ function Sidebar(props) {
   return (
     <div className="sidebar">
       <div className="sidebar-top">
-        <img src="https://mms.img.susercontent.com/ea9699a4866c3515870f1c238acaca90"></img>
+        <img src="https://mms.img.susercontent.com/ea9699a4866c3515870f1c238acaca90" alt="Admin Avatar - Quản trị viên"></img>
       </div>
       <div className="sidebar-list">
         <Link to="/admin" className={'sidebar-list-item'}>

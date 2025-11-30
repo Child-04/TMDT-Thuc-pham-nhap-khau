@@ -94,7 +94,7 @@ export default function FilterMenu() {
       }
       onClick={() => HandleFilterProductByType(item.name)}
     >
-      <img src={item.img}></img>
+      <img src={item.img} alt={`Bộ lọc sản phẩm ${item.name || 'Danh mục'}`}></img>
     </div>
   );
 
