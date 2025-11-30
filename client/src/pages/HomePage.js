@@ -10,6 +10,7 @@ import Vet from '../components/HotSale/components/Vet';
 import Meat from '../components/HotSale/components/Meat';
 import Other from '../components/HotSale/components/Other';
 
+
 function HomePage(props) {
     const { userInfo } = useSelector(state => state.userSignin)
 

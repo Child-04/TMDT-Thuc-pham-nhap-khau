@@ -16,7 +16,7 @@ import PaymentPage from "./pages/PaymentPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import Profile from "./components/Profile/Profile";
 import MessengerChat from "./components/MessengerChat/MessengerChat";
-import AboutPage from "./pages/AboutPage";
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -82,7 +82,7 @@ function App() {
         </Route> */}
 
         <MessengerChat />
-        
+
       </Router>
     </div>
   );
