@@ -11,11 +11,11 @@ import SearchPage from "./pages/SearchPage";
 import AdminPage from "./pages/AdminPage";
 import ResetScroll from "./components/ResetScroll/ResetScroll";
 import MyOrderPage from "./pages/MyOrderPage";
-import ChatPage from "./pages/ChatPage";
+//import ChatPage from "./pages/ChatPage";
 import PaymentPage from "./pages/PaymentPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import Profile from "./components/Profile/Profile";
-import AboutPage from "./pages/AboutPage";
+import MessengerChat from "./components/MessengerChat/MessengerChat";
 
 function App() {
   return (
@@ -64,9 +64,9 @@ function App() {
         <Route path="/profile">
           <Profile></Profile>
         </Route>
-        <Route path="/chat">
+        {/* <Route path="/chat">
           <ChatPage></ChatPage>
-        </Route>
+        </Route> */}
 
         <Route path="/admin">
           <AdminPage></AdminPage>
@@ -79,6 +79,9 @@ function App() {
         {/* <Route path='*'>
           <HomePage></HomePage>
         </Route> */}
+
+        <MessengerChat />
+        
       </Router>
     </div>
   );
