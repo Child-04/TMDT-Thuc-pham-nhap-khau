@@ -74,6 +74,36 @@ function ProductPage(props) {
                         <strong>Bước 3:</strong> Thêm sản phẩm vào giỏ hàng và tiến hành thanh toán an toàn với nhiều phương thức khác nhau.
                     </p>
                 </div>
+                
+                {/* Additional Hidden SEO Content */}
+                <div style={{ display: 'none' }} className="seo-content-product-extended">
+                    <h2>Khám phá thế giới thực phẩm nhập khẩu đa dạng</h2>
+                    <p>Trang danh mục sản phẩm của Nông sản Việt Nam là nơi bạn có thể khám phá hàng ngàn sản phẩm thực phẩm nhập khẩu chất lượng cao từ khắp thế giới. Chúng tôi tự hào mang đến cho khách hàng Việt Nam những sản phẩm tốt nhất với mức giá cạnh tranh và dịch vụ hoàn hảo.</p>
+                    
+                    <h3>Thực phẩm hữu cơ và sạch</h3>
+                    <p>Bộ sưu tập thực phẩm hữu cơ của chúng tôi bao gồm rau củ quả tươi từ các nông trại hữu cơ được chứng nhận quốc tế. Các sản phẩm này không chứa thuốc trừ sâu, phân bón hóa học hay chất bảo quản có hại, đảm bảo an toàn tuyệt đối cho sức khỏe gia đình bạn.</p>
+                    
+                    <h3>Thịt và hải sản cao cấp</h3>
+                    <p>Từ thịt bò Wagyu nổi tiếng của Nhật Bản, thịt cừu New Zealand đến tôm hùm Canada và cá hồi Na Uy, tất cả đều được nhập khẩu trực tiếp và bảo quản trong điều kiện lạnh tốt nhất. Mỗi sản phẩm đều có giấy chứng nhận nguồn gốc và chất lượng rõ ràng.</p>
+                    
+                    <h3>Sữa và sản phẩm từ sữa</h3>
+                    <p>Phô mai từ các vùng nổi tiếng như Pháp, Ý, Thụy Sĩ với hương vị đặc trưng và chất lượng tuyệt hại. Bơ tươi từ New Zealand, sữa chua Hy Lạp và nhiều sản phẩm từ sữa khác đảm bảo giá trị dinh dưỡng cao và hương vị tự nhiên.</p>
+                    
+                    <h3>Đồ uống và thức uống</h3>
+                    <p>Rượu vang từ các vùng sản xuất danh tiếng như Bordeaux, Tuscany, Napa Valley cùng với bia thủ công từ Bỉ, Đức. Bên cạnh đó là các loại trà cao cấp từ Trung Quốc, Nhật Bản, cà phê đặc sản từ Colombia, Jamaica và nhiều loại nước trái cây tự nhiên.</p>
+                    
+                    <h3>Bánh kẹo và đồ ngọt</h3>
+                    <p>Chocolate Thụy Sĩ và Bỉ với độ tinh khiết cao, bánh quy bơ Đan Mạch, kẹo trái cây Italia và nhiều loại bánh ngọt truyền thống từ các nước châu Âu. Tất cả đều được sản xuất theo công thức truyền thống và sử dụng nguyên liệu tự nhiên.</p>
+                    
+                    <h3>Gia vị và nguyên liệu nấu ăn</h3>
+                    <p>Bộ sưu tập gia vị đa dạng từ nghệ tây Tây Ban Nha, tiêu đen Kampot, muối hồng Himalaya đến các loại dầu olive extra virgin từ Ý và Hy Lạp. Giúp bạn tạo nên những món ăn với hương vị đặc trưng của từng vùng miền.</p>
+                    
+                    <h3>Thực phẩm chức năng và dinh dưỡng</h3>
+                    <p>Các sản phẩm bổ sung dinh dưỡng từ các thương hiệu uy tín thế giới, thực phẩm dành cho người ăn kiêng, người tiểu đường và các nhu cầu dinh dưỡng đặc biệt khác. Tất cả đều được kiểm định về chất lượng và hiệu quả.</p>
+                    
+                    <h3>Hệ thống phân loại và tìm kiếm thông minh</h3>
+                    <p>Website được thiết kế với hệ thống phân loại sản phẩm khoa học, giúp khách hàng dễ dàng tìm kiếm theo nhiều tiêu chí như xuất xứ, loại sản phẩm, mức giá, thương hiệu. Tính năng so sánh sản phẩm giúp bạn đưa ra quyết định mua sắm tốt nhất.</p>
+                </div>
             </div>
             
             <AllProduct></AllProduct>

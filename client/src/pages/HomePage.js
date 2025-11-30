@@ -131,6 +131,33 @@ function HomePage(props) {
                         Với giao diện thân thiện, dễ sử dụng và hệ thống thanh toán an toàn, Nông sản Việt Nam mang đến cho bạn trải nghiệm mua sắm online thuận tiện và đáng tin cậy. Hãy khám phá hàng ngàn sản phẩm chất lượng và đặt hàng ngay hôm nay!
                     </p>
                 </div>
+                
+                {/* Additional Hidden SEO Content */}
+                <div style={{ display: 'none' }} className="seo-content-homepage-extended">
+                    <h2>Thực phẩm nhập khẩu chất lượng cao từ khắp thế giới</h2>
+                    <p>Nông sản Việt Nam tự hào là điểm đến tin cậy cho những ai yêu thích thực phẩm chất lượng cao. Chúng tôi không ngừng tìm kiếm và mang về Việt Nam những sản phẩm thực phẩm tốt nhất từ các quốc gia nổi tiếng về ẩm thực như Nhật Bản, Hàn Quốc, Ý, Pháp, Úc, New Zealand, Mỹ và nhiều nước khác.</p>
+                    
+                    <h3>Cam kết chất lượng và an toàn thực phẩm</h3>
+                    <p>Tất cả sản phẩm tại Nông sản Việt Nam đều được kiểm tra nghiêm ngặt về chất lượng, nguồn gốc xuất xứ và đảm bảo an toàn thực phẩm theo các tiêu chuẩn quốc tế. Chúng tôi chỉ hợp tác với những nhà cung cấp uy tín, có giấy phép kinh doanh hợp lệ và cam kết về chất lượng sản phẩm.</p>
+                    
+                    <h3>Đa dạng về danh mục sản phẩm</h3>
+                    <p>Kho hàng của chúng tôi bao gồm đầy đủ các loại thực phẩm từ thực phẩm tươi sống như thịt bò Wagyu Nhật Bản, hải sản tươi từ Na Uy, trái cây nhiệt đới từ Thái Lan cho đến các sản phẩm chế biến sẵn như pasta Ý, chocolate Thụy Sĩ, phô mai Pháp, rượu vang Chile và Argentina.</p>
+                    
+                    <h3>Dịch vụ khách hàng chuyên nghiệp</h3>
+                    <p>Đội ngũ chăm sóc khách hàng của Nông sản Việt Nam làm việc 24/7 để hỗ trợ quý khách trong mọi nhu cầu mua sắm. Từ tư vấn sản phẩm, hướng dẫn sử dụng cho đến giải quyết các vấn đề phát sinh, chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ một cách tận tình nhất.</p>
+                    
+                    <h3>Hệ thống giao hàng tiên tiến</h3>
+                    <p>Với hệ thống cold chain hiện đại, chúng tôi đảm bảo sản phẩm được bảo quản ở nhiệt độ phù hợp suốt quá trình vận chuyển. Đặc biệt đối với thực phẩm tươi sống và đông lạnh, chúng tôi sử dụng xe tải lạnh chuyên dụng và bao bì cách nhiệt chất lượng cao để duy trì độ tươi ngon tốt nhất.</p>
+                    
+                    <h3>Chương trình khuyến mãi hấp dẫn</h3>
+                    <p>Nông sản Việt Nam thường xuyên tổ chức các chương trình khuyến mãi, giảm giá đặc biệt cho khách hàng. Từ giảm giá theo mùa, khuyến mãi khai trương sản phẩm mới đến chương trình tích điểm đổi quà, chúng tôi luôn mang đến những ưu đãi tốt nhất cho khách hàng thân thiết.</p>
+                    
+                    <h3>Thanh toán an toàn và tiện lợi</h3>
+                    <p>Hỗ trợ đa dạng các phương thức thanh toán từ tiền mặt khi nhận hàng (COD), chuyển khoản ngân hàng, thẻ tín dụng quốc tế đến các ví điện tử phổ biến như MoMo, VNPay, ZaloPay. Tất cả giao dịch đều được bảo mật tối đa bằng công nghệ mã hóa SSL hiện đại.</p>
+                    
+                    <h3>Cộng đồng yêu thực phẩm chất lượng</h3>
+                    <p>Tham gia cộng đồng khách hàng của Nông sản Việt Nam để chia sẻ kinh nghiệm nấu nướng, công thức món ăn độc đáo và nhận những thông tin hữu ích về dinh dưỡng. Chúng tôi thường xuyên tổ chức các workshop, lớp học nấu ăn và sự kiện trải nghiệm sản phẩm mới.</p>
+                </div>
             </div>
             
             <Vet></Vet>
