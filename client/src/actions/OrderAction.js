@@ -4,7 +4,7 @@ import { BASE_URL } from '../constants/UserConstant';
 let config = {
   headers: {
     "Content-Type": "application/json",
-    'Token': "b1e1bbcb-ef7f-11eb-9388-d6e0030cbbb7",
+    'Token': "fd8d3244-ce83-11f0-897f-12426012f4bf",
   },
 };
 
