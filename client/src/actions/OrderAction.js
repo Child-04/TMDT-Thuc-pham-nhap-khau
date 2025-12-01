@@ -231,7 +231,7 @@ export const GetAllProvince = () => async (dispatch, getState) => {
 export const GetAllDistrict = (provinceId) => async (dispatch, getState) => {
   const newConfig = {
     headers: {
-      Token: "b1e1bbcb-ef7f-11eb-9388-d6e0030cbbb7"
+      Token: "fd8d3244-ce83-11f0-897f-12426012f4bf"
     },
     params: {
       province_id: provinceId
@@ -250,7 +250,7 @@ export const GetAllDistrict = (provinceId) => async (dispatch, getState) => {
 export const GetAllWard = (districtId) => async (dispatch, getState) => {
   const newConfig = {
     headers: {
-      Token: "b1e1bbcb-ef7f-11eb-9388-d6e0030cbbb7"
+      Token: "fd8d3244-ce83-11f0-897f-12426012f4bf"
     },
     params: {
       district_id:districtId
