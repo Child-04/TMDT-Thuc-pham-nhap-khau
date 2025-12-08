@@ -67,7 +67,7 @@ export default function VnPay(props) {
 
         // --- GỌI API ---
         try {
-            const res = await fetch("http://localhost:4000/api/payment/momo", {
+            const res = await fetch(`${BASE_URL}/api/payment/momo`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
