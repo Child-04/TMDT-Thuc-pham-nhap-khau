@@ -34,18 +34,14 @@ PAYPAL_CLIENT_ID=YOUR_PAYPAL_CLIENT_ID_HERE
 
 ---
 
-## 📋 BƯỚC 3: ĐĂNG KÝ MOMO BUSINESS (Tùy chọn)
+## ~~📋 BƯỚC 3: ĐĂNG KÝ MOMO BUSINESS~~ (KHÔNG CẦN - Dự án sinh viên)
 
-**Nếu muốn dùng MoMo thật (không phải test):**
+**❌ BỎ QUA BƯỚC NÀY**
 
-1. Vào: https://business.momo.vn/
-2. Đăng ký tài khoản doanh nghiệp
-3. Chờ MoMo duyệt (1-3 ngày)
-4. Nhận Partner Code, Access Key, Secret Key
-5. Thay vào Render Environment Variables
-
-**Nếu chỉ test:**
-- Dùng credentials demo đã có sẵn (đã điền ở Bước 1)
+**✅ CHO DỰ ÁN SINH VIÊN:**
+- Dùng credentials **SANDBOX** đã có sẵn (đã điền ở Bước 1)
+- **KHÔNG CẦN** đăng ký MoMo Business
+- Thanh toán hoàn toàn ảo, đủ để demo và nộp bài
 
 ---
 

@@ -152,24 +152,25 @@ VNP_URL=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
 VNPAY_RETURN_URL=https://tmdt-thuc-pham-nhap-khau-client.onrender.com/vnpay-success
 ```
 
-### ⚠️ LƯU Ý QUAN TRỌNG:
+### ⚠️ LƯU Ý QUAN TRỌNG (DỰ ÁN SINH VIÊN):
 
-1. **MoMo Credentials hiện tại:**
-   - Là thông tin **DEMO** từ tài liệu MoMo
-   - Chỉ dùng để test ban đầu
-   - **BẠN CẦN ĐĂNG KÝ TÀI KHOẢN MOMO BUSINESS** để có credentials thật
-   - Link đăng ký: https://business.momo.vn/
+1. **MoMo Credentials:**
+   - Dùng thông tin **SANDBOX/DEMO** từ tài liệu MoMo
+   - **KHÔNG CẦN đăng ký MoMo Business** (vì chỉ là dự án học tập)
+   - Credentials demo đã đủ để chạy và test
+   - Thanh toán hoàn toàn ảo, không có tiền thật
 
 2. **PayPal Client ID:**
-   - Cần tạo app trên https://developer.paypal.com/
-   - Dùng Sandbox để test
-   - Chuyển sang Live khi deploy chính thức
+   - Tạo **Developer Account** MIỄN PHÍ tại https://developer.paypal.com/
+   - Dùng **Sandbox** (test accounts) - KHÔNG dùng Live
+   - PayPal cung cấp tài khoản test sẵn
+   - Thanh toán hoàn toàn ảo
 
-3. **Sau khi có credentials thật:**
+3. **Cách cấu hình:**
    - Vào Render Dashboard
    - Chọn service `tmdt-server`
    - Settings → Environment
-   - Update các giá trị mới
+   - Thêm các biến môi trường Sandbox
    - Save → Render tự động redeploy
 
 ---

@@ -25,7 +25,7 @@ function Order(props) {
   const [listDistrict, setListDistrict] = useState(false);
   const [listWard, setListWard] = useState(false);
 
-  const [chooseProvince, setChooseProvince] = useState({name: "Hồ Chí Minh"});
+  const [chooseProvince, setChooseProvince] = useState({name: "Tỉnh / Thành phố"});
   const [chooseDistrict, setChooseDistrict] = useState({name: "Quận / Huyện"});
   const [chooseWard, setChooseWard] = useState({name: "Phường / Xã"});
 
@@ -76,10 +76,6 @@ function Order(props) {
 
   useEffect(() => {
     dispatch(GetAllProvince());
-  }, []);
-
-  useEffect(() => {
-    dispatch(GetAllDistrict(202));
   }, []);
 
   const handleSelectProvince = (name, id) => {

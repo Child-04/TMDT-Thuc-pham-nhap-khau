@@ -20,37 +20,28 @@ Dự án đã tích hợp 3 phương thức thanh toán:
 
 ## 🟣 CẤU HÌNH MOMO
 
-### Bước 1: Đăng ký MoMo Business Account
+### ~~Bước 1: Đăng ký MoMo Business Account~~ (KHÔNG CẦN - Dự án sinh viên)
 
-1. **Truy cập:** https://business.momo.vn/
-2. **Đăng ký tài khoản doanh nghiệp**
-3. **Chờ MoMo duyệt** (thường 1-3 ngày làm việc)
+**❌ BỎ QUA BƯỚC NÀY** - Dự án sinh viên không cần đăng ký thật
 
-### Bước 2: Lấy thông tin API
+### ~~Bước 2: Lấy thông tin API~~ (KHÔNG CẦN - Dùng Sandbox)
 
-Sau khi tài khoản được duyệt, MoMo sẽ cung cấp:
+**✅ DÙNG THÔNG TIN SANDBOX SẴN CÓ** (Xem Bước 3)
 
-```
-Partner Code: MOMO_XXXXXXX
-Access Key: F8BBA842ECF85XXXXXXXXX
-Secret Key: K951B6PE1waDMi640xX08PD3vg6EkVlzXXXXXXXX
-```
+### Bước 3: Dùng MoMo Sandbox (Cho dự án sinh viên)
 
-### Bước 3: Test với MoMo Sandbox (Development)
-
-Để test trước khi đăng ký chính thức:
-
-**Thông tin test MoMo Sandbox:**
+**Thông tin test MoMo Sandbox (Dùng sẵn):**
 ```dotenv
 MOMO_PARTNER_CODE=MOMO
 MOMO_ACCESS_KEY=F8BBA842ECF85
 MOMO_SECRET_KEY=K951B6PE1waDMi640xX08PD3vg6EkVlz
 ```
 
-**⚠️ LƯU Ý:** 
-- Đây là thông tin **DEMO** từ tài liệu MoMo
-- Chỉ dùng để test, không dùng cho production
-- Bạn cần đăng ký tài khoản thật để có thông tin riêng
+**✅ LƯU Ý CHO DỰ ÁN SINH VIÊN:** 
+- Đây là thông tin **SANDBOX** từ tài liệu MoMo Developer
+- **SỬ DỤNG NGAY** - không cần đăng ký tài khoản
+- Thanh toán hoàn toàn ảo (không có tiền thật)
+- **Đủ để demo và nộp bài** cho giảng viên
 
 ### Bước 4: Cấu hình URLs
 
@@ -68,32 +59,32 @@ MOMO_IPN_URL=https://tmdt-thuc-pham-nhap-khau-server.onrender.com/api/payment/mo
 - **REDIRECT_URL:** URL mà người dùng sẽ được chuyển về sau khi thanh toán
 - **IPN_URL:** URL mà MoMo gọi để thông báo kết quả thanh toán (webhook)
 
-### Bước 5: Đăng ký IPN URL với MoMo
+### ~~Bước 5: Đăng ký IPN URL với MoMo~~ (KHÔNG CẦN - Sandbox mode)
 
-1. Đăng nhập vào MoMo Business Portal
-2. Vào phần **Cấu hình API**
-3. Thêm **IPN URL** của bạn:
-   ```
-   https://tmdt-thuc-pham-nhap-khau-server.onrender.com/api/payment/momo-ipn
-   ```
-4. Lưu cấu hình
+**❌ BỎ QUA BƯỚC NÀY** 
+- Sandbox không cần đăng ký IPN URL
+- Hệ thống tự động xử lý khi dùng test credentials
 
 ---
 
 ## 💙 CẤU HÌNH PAYPAL
 
-### Bước 1: Tạo PayPal Developer Account
+### Bước 1: Tạo PayPal Developer Account (MIỄN PHÍ)
 
 1. **Truy cập:** https://developer.paypal.com/
-2. **Đăng nhập** với tài khoản PayPal cá nhân
+2. **Đăng ký/Đăng nhập** (dùng email bất kỳ - MIỄN PHÍ)
 3. Vào **Dashboard** → **Apps & Credentials**
+
+**✅ CHO DỰ ÁN SINH VIÊN:** Tài khoản Developer hoàn toàn miễn phí, không cần tài khoản PayPal thật
 
 ### Bước 2: Tạo App mới
 
 1. Click **"Create App"**
 2. Nhập tên app: `TMDT-Thuc-pham`
-3. Chọn **Sandbox** (để test) hoặc **Live** (production)
+3. **⚠️ QUAN TRỌNG:** Chọn **Sandbox** (KHÔNG chọn Live)
 4. Click **Create App**
+
+**✅ CHO DỰ ÁN SINH VIÊN:** Luôn dùng Sandbox, không bao giờ chuyển sang Live
 
 ### Bước 3: Lấy Client ID
 
@@ -125,12 +116,11 @@ PayPal cung cấp **tài khoản test** tự động:
 ### Bước 5: Cấu hình Environment Variable
 
 ```dotenv
-# Sandbox (Development)
+# Sandbox (Cho dự án sinh viên - CHỈ DÙNG CÁI NÀY)
 PAYPAL_CLIENT_ID=AeXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-# Live (Production - sau khi test xong)
-PAYPAL_CLIENT_ID=Ae_LIVE_XXXXXXXXXXXXXXXXXXXXXX
 ```
+
+**❌ KHÔNG DÙNG Live Client ID** - Chỉ dành cho doanh nghiệp thật
 
 ---
 
