@@ -5,6 +5,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { createOrder, payOrder } from "../../actions/OrderAction";
 import { useHistory } from "react-router-dom";
 import VnPay from "./VnPay";
+import MoMo from "./MoMo";
 import { BASE_URL } from '../../constants/UserConstant';
 
 export default function Payment(props) {
@@ -35,7 +36,7 @@ const { chooseProvince, chooseDistrict, chooseWard, getValues } = props;
     const OrderPaid = {
       ...order,
       status: "pendding",
-      paymentMethod: "payOnline",
+      paymentMethod: "PayPal",
       paymentResult: {...paymentResult},
     };
     await dispatch(createOrder(OrderPaid));
@@ -96,21 +97,39 @@ const { chooseProvince, chooseDistrict, chooseWard, getValues } = props;
         ""
       )}
       {choosePay.payOnline ? (
-        <button type="submit" className="paypal">
+        <div className="online-payment-methods">
+          <h5 style={{marginTop: '20px', marginBottom: '10px', color: '#333'}}>Chọn phương thức thanh toán online:</h5>
           
+          {/* MoMo Payment */}
+          <MoMo 
+            chooseProvince={chooseProvince}
+            chooseDistrict={chooseDistrict}
+            chooseWard={chooseWard}
+            getValues={getValues}
+          />
+
+          {/* VNPay Payment */}
           <VnPay 
             chooseProvince={chooseProvince}
             chooseDistrict={chooseDistrict}
             chooseWard={chooseWard}
             getValues={getValues}
-          ></VnPay>
-          <PayPalButton
-            className="paypal-btn"
-            style={{ color: "white", marginTop: '1rem' }}
-            amount={1}
-            onSuccess={successPaymentHandler}
-          ></PayPalButton>
-        </button>
+          />
+
+          {/* PayPal Payment */}
+          <div style={{marginTop: '15px'}}>
+            <p style={{fontSize: '14px', color: '#666', marginBottom: '10px'}}>
+              Hoặc thanh toán qua PayPal:
+            </p>
+            <PayPalButton
+              className="paypal-btn"
+              style={{ layout: 'horizontal', tagline: false }}
+              amount={(order?.totalPrice / 25000).toFixed(2)}
+              currency="USD"
+              onSuccess={successPaymentHandler}
+            />
+          </div>
+        </div>
       ) : (
         ""
       )}

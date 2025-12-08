@@ -139,14 +139,15 @@ function Order(props) {
                         {allProvince
                           ? allProvince.data.map((item) => (
                               <span
+                                key={item.ProvinceID}
                                 onClick={() =>
                                   handleSelectProvince(
-                                    item. ProvinceName,
+                                    item.ProvinceName,
                                     item.ProvinceID
                                   )
                                 }
                               >
-                                {item. ProvinceName}
+                                {item.ProvinceName}
                               </span>
                             ))
                           : ""}
@@ -217,11 +218,12 @@ function Order(props) {
                         {allWard && allWard.data !== null
                           ? allWard.data.map((item) => (
                               <span
+                                key={item.WardCode}
                                 onClick={() =>
-                                  handleSelectWard(item. WardName, item.WardCode)
+                                  handleSelectWard(item.WardName, item.WardCode)
                                 }
                               >
-                                {item. WardName}
+                                {item.WardName}
                               </span>
                             ))
                           : ""}

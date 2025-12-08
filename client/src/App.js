@@ -19,6 +19,7 @@ import Profile from "./components/Profile/Profile";
 import MessengerChat from "./components/MessengerChat/MessengerChat";
 import AboutPage from './pages/AboutPage';
 import VnPaySuccess from './components/order/VnPaySuccess';
+import PaymentReturn from './components/order/PaymentReturn';
 
 function App() {
   return (
@@ -61,7 +62,8 @@ function App() {
           <MyOrderPage></MyOrderPage>
         </Route>
 
-        <Route path="/payment-return" component={VnPaySuccess} />
+        <Route path="/payment-return" component={PaymentReturn} />
+        <Route path="/vnpay-success" component={VnPaySuccess} />
 
         <Route path="/search">
           <SearchPage></SearchPage>

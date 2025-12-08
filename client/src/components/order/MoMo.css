@@ -1,0 +1,56 @@
+.momo-payment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #a50064 0%, #d82d8b 100%);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(165, 0, 100, 0.3);
+}
+
+.momo-payment-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(165, 0, 100, 0.4);
+    background: linear-gradient(135deg, #8b0054 0%, #c01d75 100%);
+}
+
+.momo-payment-button:active {
+    transform: translateY(0);
+}
+
+.momo-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.momo-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .momo-payment-button {
+        padding: 12px 20px;
+        gap: 10px;
+    }
+    
+    .momo-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .momo-text {
+        font-size: 14px;
+    }
+}
